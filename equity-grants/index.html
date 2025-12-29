@@ -16,15 +16,15 @@
   <body>
     <header class="hero">
       <div class="hero__content">
-        <p class="eyebrow">Equity Grants, Demystified</p>
+        <p class="eyebrow">Compensation Story</p>
         <h1>
-          The building blocks behind
-          <span class="accent">every equity grant</span>
+          Understanding <span class="accent">equity grant structures</span> in
+          a single scroll
         </h1>
         <p class="lede">
-          Think of a grant as a set of gears: value, instrument, cliffs,
-          duration, interval, and curve. Scroll to see how these gears mesh
-          together and how companies rearrange them to shape experience.
+          Equity is more than a number on an offer letter. Scroll to explore how
+          grant types, vesting schedules, and refresh cycles fit together to
+          shape long-term compensation.
         </p>
         <div class="hero__meta">
           <span>Built for total rewards, managers, and curious candidates</span>
@@ -33,18 +33,17 @@
         </div>
       </div>
       <div class="hero__card">
-        <div class="badge">Live story</div>
-        <h2>Gear Summary</h2>
-        <ul id="gear-summary">
-          <li><strong>Value:</strong> $200k notional</li>
-          <li><strong>Instrument:</strong> RSUs</li>
-          <li><strong>Cliff:</strong> 12 months</li>
-          <li><strong>Duration:</strong> 4 years</li>
-          <li><strong>Interval:</strong> Monthly</li>
-          <li><strong>Curve:</strong> 25 / 25 / 25 / 25</li>
+        <div class="badge">New</div>
+        <h2>Equity Plan Snapshot</h2>
+        <ul>
+          <li><strong>Program:</strong> Time-based RSUs</li>
+          <li><strong>Vesting:</strong> 1-year cliff, monthly thereafter</li>
+          <li><strong>Refresh:</strong> Annual performance cycle</li>
+          <li><strong>Tax:</strong> Ordinary income at vest</li>
         </ul>
         <p class="muted">
-          This snapshot updates as you scroll through each building block.
+          This card updates as you scroll through the story, mirroring how plan
+          details evolve.
         </p>
       </div>
     </header>
@@ -52,66 +51,59 @@
     <main>
       <section class="scrolly">
         <figure class="scrolly__visual" aria-live="polite">
-          <p class="label" id="viz-label">Building Block</p>
-          <h3 id="viz-title">Value</h3>
+          <p class="label" id="viz-label">Grant Types</p>
+          <h3 id="viz-title">Restricted Stock Units (RSUs)</h3>
           <p id="viz-body">
-            The total monetary amount tied to the grant. Think of it as the
-            “amount at stake” that will convert into shares at grant time.
+            RSUs are company shares that settle into your account as they vest.
+            They avoid strike prices, making them straightforward for employees.
           </p>
-          <div class="viz-gear" id="viz-gear">
-            <div class="gear gear--outer"></div>
-            <div class="gear gear--inner"></div>
-            <div class="gear gear--dot"></div>
-          </div>
+          <div class="viz-grid" id="viz-grid"></div>
           <div class="legend" id="viz-legend"></div>
         </figure>
         <article class="scrolly__steps" id="scrolly-steps">
           <div class="step" data-step="0">
-            <p class="step__kicker">Value</p>
-            <h3>“Total amount at stake”</h3>
+            <p class="step__kicker">Foundation</p>
+            <h3>Grant types set the tone</h3>
             <p>
-              Expressed in currency, converted to shares at grant. Value shifts
-              over time with the stock price—employees are betting on upside.
+              RSUs, stock options, and performance shares all deliver ownership
+              differently. Choose formats that match your talent strategy,
+              risk-tolerance, and maturity as a company.
             </p>
           </div>
           <div class="step" data-step="1">
-            <p class="step__kicker">Instrument</p>
-            <h3>RSUs vs. stock options</h3>
+            <p class="step__kicker">Timing</p>
+            <h3>Vesting turns potential into pay</h3>
             <p>
-              RSUs deliver shares at vest with no exercise. Options deliver the
-              right to buy at a strike price—upside heavy but requires action.
+              A 1-year cliff rewards early retention, while monthly or
+              quarterly vesting keeps momentum. Front-loaded schedules help new
+              joiners, while back-loaded curves reward staying power.
             </p>
           </div>
           <div class="step" data-step="2">
-            <p class="step__kicker">Duration</p>
-            <h3>The runway</h3>
+            <p class="step__kicker">Momentum</p>
+            <h3>Refresh grants prevent stagnation</h3>
             <p>
-              Most tech plans use 4 years; shorter for make-wholes, longer for
-              founders. Duration encodes how long the incentive should stay live.
+              Annual refreshes based on performance keep total equity growing.
+              Calibration policies and budget guardrails make outcomes
+              predictable and fair across teams.
             </p>
           </div>
           <div class="step" data-step="3">
-            <p class="step__kicker">Interval</p>
-            <h3>How often equity lands</h3>
+            <p class="step__kicker">Moments of truth</p>
+            <h3>Taxes and liquidity windows matter</h3>
             <p>
-              Monthly feels smooth and employee-friendly. Quarterly and annual
-              intervals feel more like mini-cliffs—stickier for retention.
+              With RSUs, taxes land at each vest. Option holders worry about
+              strike prices and exercise windows. Clear guidance avoids
+              surprises around blackout periods and lockups.
             </p>
           </div>
           <div class="step" data-step="4">
-            <p class="step__kicker">Cliff</p>
-            <h3>The probationary period</h3>
+            <p class="step__kicker">Communication</p>
+            <h3>Storytelling builds trust</h3>
             <p>
-              Nothing vests during the cliff; then a lump hits. Commonly 12
-              months for initial grants; refreshers often skip cliffs entirely.
-            </p>
-          </div>
-          <div class="step" data-step="5">
-            <p class="step__kicker">Curve</p>
-            <h3>The weighting by year</h3>
-            <p>
-              Straight-line is predictable; front-loaded is candidate friendly;
-              back-loaded maximizes stickiness (think 5-15-40-40).
+              Pair compensation numbers with plain-language narratives. Show how
+              equity grows with company value, how refresh cycles work, and what
+              protections exist if markets swing.
             </p>
           </div>
         </article>
@@ -119,185 +111,86 @@
 
       <section class="insights">
         <div class="section-header">
-          <p class="eyebrow">Building blocks</p>
-          <h2>Each gear is standard—the arrangement is the art</h2>
+          <p class="eyebrow">Design patterns</p>
+          <h2>Mix and match elements to fit your compensation philosophy</h2>
           <p class="muted">
-            Combine these pieces to match your philosophy. The mechanics rarely
-            change—but the weighting and narrative do.
+            Each element below can be combined. For example, pair a 25/25/25/25
+            vest with an annual refresh and sign-on grant to balance attraction
+            and retention.
           </p>
         </div>
         <div class="tiles">
           <div class="tile">
-            <h4>Value</h4>
+            <h4>Grant formats</h4>
             <ul>
-              <li>Total notional at grant date</li>
-              <li>Share count shifts with price</li>
-              <li>Employees bet on future upside</li>
+              <li>Time-based RSUs for simplicity</li>
+              <li>Stock options for upside alignment</li>
+              <li>Performance shares tied to milestones</li>
             </ul>
           </div>
           <div class="tile">
-            <h4>Instrument</h4>
+            <h4>Vesting recipes</h4>
             <ul>
-              <li>RSUs: no exercise, taxed at vest</li>
-              <li>Options: strike price, taxed at exercise</li>
-              <li>PSUs: tie to milestones or metrics</li>
+              <li>Standard: 1-year cliff, monthly vest</li>
+              <li>Front-loaded: 40/20/20/20 for quick impact</li>
+              <li>Long-term: 10/20/30/40 to reward tenure</li>
             </ul>
           </div>
           <div class="tile">
-            <h4>Cliff & interval</h4>
+            <h4>Refresh policy</h4>
             <ul>
-              <li>Cliff defers first vest (often 12 months)</li>
-              <li>Intervals set the cadence (monthly feels smooth)</li>
-              <li>Quarterly/annual can feel like mini-cliffs</li>
+              <li>Annual performance-based refresh</li>
+              <li>Promotion triggers with spot grants</li>
+              <li>Equity true-ups for market adjustments</li>
             </ul>
           </div>
           <div class="tile">
-            <h4>Curve & duration</h4>
+            <h4>Risk guardrails</h4>
             <ul>
-              <li>Standard: flat 25/25/25/25 over 4 years</li>
-              <li>Front-loaded: more early, wins candidates</li>
-              <li>Back-loaded: stickiness for later years</li>
+              <li>Blackout calendars and trading windows</li>
+              <li>Education on tax withholding and 83(b)</li>
+              <li>Clear post-termination exercise rules</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid-callout">
-        <div class="section-header">
-          <p class="eyebrow">Intervals</p>
-          <h2>Same math, different experience</h2>
-          <p class="muted">
-            Monthly feels smooth; annual feels like repeating cliffs. Choose
-            based on employee experience vs. retention stickiness.
-          </p>
-        </div>
-        <div class="spectrum">
-          <div class="spectrum__labels">
-            <span>More employee-friendly</span>
-            <span>Less employee-friendly</span>
-          </div>
-          <div class="spectrum__bar">
-            <div class="spectrum__segment spectrum__segment--soft">Monthly</div>
-            <div class="spectrum__segment spectrum__segment--medium">
-              Quarterly
-            </div>
-            <div class="spectrum__segment spectrum__segment--firm">
-              Semiannual / Annual
-            </div>
-          </div>
-          <div class="spectrum__meta">
-            <span class="tag tag--good">Employee experience</span>
-            <span class="tag tag--retention">Retention stickiness</span>
           </div>
         </div>
       </section>
 
       <section class="timeline">
         <div class="section-header">
-          <p class="eyebrow">Curves</p>
-          <h2>Weighting changes the story, not the math</h2>
+          <p class="eyebrow">Lifecycle</p>
+          <h2>What an employee experiences over four years</h2>
         </div>
         <div class="timeline__grid">
           <div class="timeline__item">
-            <p class="timestamp">A. Straight-line</p>
-            <h4>Flat and predictable</h4>
+            <p class="timestamp">Offer</p>
+            <h4>Initial grant</h4>
             <p>
-              Classic 25/25/25/25 or 1/48th monthly. Easy to model, easy to
-              explain, steady delivery.
+              Mix of base RSUs and a sign-on to bridge the cliff year. Provide
+              modeled value at target stock price and downside scenarios.
             </p>
           </div>
           <div class="timeline__item">
-            <p class="timestamp">B. Front-loaded</p>
-            <h4>Early win, taper later</h4>
+            <p class="timestamp">Month 12</p>
+            <h4>Cliff vest + first refresh</h4>
             <p>
-              40-30-20-10 or 33-33-22-12. Psychologically generous up front,
-              great for candidate attraction.
+              A meaningful first vest builds trust. A refresh grant extends the
+              runway and signals continued investment in the employee.
             </p>
           </div>
           <div class="timeline__item">
-            <p class="timestamp">C. Back-loaded</p>
-            <h4>Stickiness by design</h4>
+            <p class="timestamp">Year 2-3</p>
+            <h4>Momentum and mobility</h4>
             <p>
-              5-15-40-40 or 5-10-35-50. Maximum retention in later years, often
-              paired with higher total grant values.
+              Promotions and stretch roles trigger spot grants. Regular
+              vesting keeps realized value steady, even in choppy markets.
             </p>
           </div>
           <div class="timeline__item">
-            <p class="timestamp">D. Make-whole variants</p>
-            <h4>Compressed, front-heavy</h4>
+            <p class="timestamp">Year 4</p>
+            <h4>Retention moment</h4>
             <p>
-              Designed to replace forfeited equity. Shorter duration, partial
-              immediate vest, and accelerated early curve.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid-callout">
-        <div class="section-header">
-          <p class="eyebrow">Grant contexts</p>
-          <h2>Same mechanics, different purposes</h2>
-        </div>
-        <div class="three-up">
-          <div class="card">
-            <p class="timestamp">Initial grants</p>
-            <ul>
-              <li>Almost always have a cliff</li>
-              <li>Commonly 4-year duration</li>
-              <li>Front/back-load to shape total comp</li>
-            </ul>
-          </div>
-          <div class="card">
-            <p class="timestamp">Refreshers</p>
-            <ul>
-              <li>Often no cliff</li>
-              <li>Even vesting over 2–4 years</li>
-              <li>Cadenced annually to avoid equity cliffs</li>
-            </ul>
-          </div>
-          <div class="card">
-            <p class="timestamp">Make-wholes</p>
-            <ul>
-              <li>Replace forfeited equity</li>
-              <li>Shorter duration; partial immediate vest</li>
-              <li>Compressed, front-loaded schedule</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid-callout">
-        <div class="section-header">
-          <p class="eyebrow">Vesting basis</p>
-          <h2>What actually triggers vesting?</h2>
-        </div>
-        <div class="four-up">
-          <div class="card">
-            <p class="timestamp">Time-based</p>
-            <p class="muted">
-              The most common for tech RSUs/options. Stay employed, vest over
-              time.
-            </p>
-          </div>
-          <div class="card">
-            <p class="timestamp">Performance-based</p>
-            <p class="muted">
-              Executive PSUs tied to revenue, margin, shipped products, or stock
-              price hurdles.
-            </p>
-          </div>
-          <div class="card">
-            <p class="timestamp">Milestone-based</p>
-            <p class="muted">
-              Founders/advisors vest on specific milestones—launch, fundraise,
-              or certifications.
-            </p>
-          </div>
-          <div class="card">
-            <p class="timestamp">Double-trigger (M&A)</p>
-            <p class="muted">
-              Requires acquisition event plus termination/“good reason”. Safety
-              net for employees.
+              Graduated refreshes avoid a value cliff and reduce pressure to
+              renegotiate. Options to extend exercise windows support alumni.
             </p>
           </div>
         </div>
@@ -305,14 +198,14 @@
 
       <section class="cta">
         <div class="cta__content">
-          <h2>Translate the gears into your plan</h2>
+          <h2>Turn this story into a plan</h2>
           <p>
-            Start with the standard gears, then tune the curve and interval to
-            match your talent narrative. Be explicit about cliffs, refreshes,
-            and how value is modeled.
+            Start with a simple RSU program, layer in refreshes, and document
+            the employee journey. The best equity plans are predictable,
+            explainable, and resilient to market swings.
           </p>
           <div class="cta__actions">
-            <a class="button primary" href="#viz-title">Replay the blocks</a>
+            <a class="button primary" href="#intro">Revisit the story</a>
             <a class="button" href="mailto:comp@example.com">Share feedback</a>
           </div>
         </div>

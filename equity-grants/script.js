@@ -2,120 +2,108 @@ const steps = document.querySelectorAll(".step");
 const vizTitle = document.getElementById("viz-title");
 const vizBody = document.getElementById("viz-body");
 const vizLabel = document.getElementById("viz-label");
-const vizGear = document.getElementById("viz-gear");
+const vizGrid = document.getElementById("viz-grid");
 const vizLegend = document.getElementById("viz-legend");
-const gearSummary = document.getElementById("gear-summary");
-
-const gearColors = {
-  value: { primary: "#f29d38", secondary: "#f7c88a" },
-  instrument: { primary: "#62d8ff", secondary: "#a3f3ff" },
-  duration: { primary: "#9f7aea", secondary: "#c3b5ff" },
-  interval: { primary: "#7de2d1", secondary: "#b9f6ea" },
-  cliff: { primary: "#ff7d7d", secondary: "#ffb2b2" },
-  curve: { primary: "#ffd166", secondary: "#ffe6a7" },
-};
+const heroCardList = document.querySelector(".hero__card ul");
 
 const scenes = [
   {
-    label: "Building Block",
-    title: "Value",
+    label: "Grant Types",
+    title: "Restricted Stock Units (RSUs)",
     body:
-      "The total monetary amount tied to the grant, converted into shares at grant time. The realized value moves with the stock price.",
-    color: "value",
-    legend: [{ label: "Value snapshot", class: "value" }],
-    card: [
-      "<strong>Value:</strong> $200k notional",
-      "<strong>Instrument:</strong> RSUs",
-      "<strong>Cliff:</strong> 12 months",
-      "<strong>Duration:</strong> 4 years",
-      "<strong>Interval:</strong> Monthly",
-      "<strong>Curve:</strong> 25 / 25 / 25 / 25",
-    ],
-  },
-  {
-    label: "Building Block",
-    title: "Instrument",
-    body:
-      "RSUs deliver shares at vest; options deliver the right to buy at a strike price. Choose simplicity vs. upside emphasis.",
-    color: "instrument",
-    legend: [{ label: "RSUs vs. options", class: "instrument" }],
-    card: [
-      "<strong>Value:</strong> $200k notional",
-      "<strong>Instrument:</strong> RSUs (no exercise; taxed at vest)",
-      "<strong>Cliff:</strong> 12 months",
-      "<strong>Duration:</strong> 4 years",
-      "<strong>Interval:</strong> Monthly",
-      "<strong>Curve:</strong> 25 / 25 / 25 / 25",
-    ],
-  },
-  {
-    label: "Building Block",
-    title: "Duration",
-    body:
-      "How long the incentive stays active. Commonly 4 years; shorter for make-wholes, longer for founders and execs.",
-    color: "duration",
-    legend: [{ label: "Runway length", class: "duration" }],
-    card: [
-      "<strong>Value:</strong> $200k notional",
-      "<strong>Instrument:</strong> RSUs",
-      "<strong>Cliff:</strong> 12 months",
-      "<strong>Duration:</strong> 4 years (standard runway)",
-      "<strong>Interval:</strong> Monthly",
-      "<strong>Curve:</strong> 25 / 25 / 25 / 25",
-    ],
-  },
-  {
-    label: "Building Block",
-    title: "Interval",
-    body:
-      "How often vesting occurs. Monthly feels smooth; quarterly or annual feels like repeated cliffs—stickier for retention.",
-    color: "interval",
-    legend: [{ label: "Cadence", class: "interval" }],
-    card: [
-      "<strong>Value:</strong> $200k notional",
-      "<strong>Instrument:</strong> RSUs",
-      "<strong>Cliff:</strong> 12 months",
-      "<strong>Duration:</strong> 4 years",
-      "<strong>Interval:</strong> Monthly (employee-friendly)",
-      "<strong>Curve:</strong> 25 / 25 / 25 / 25",
-    ],
-  },
-  {
-    label: "Building Block",
-    title: "Cliff",
-    body:
-      "The probationary period before vesting begins—often 12 months for initial grants. Refreshers frequently skip cliffs.",
-    color: "cliff",
-    legend: [{ label: "Delayed start", class: "cliff" }],
-    card: [
-      "<strong>Value:</strong> $200k notional",
-      "<strong>Instrument:</strong> RSUs",
-      "<strong>Cliff:</strong> 12 months (lump after cliff)",
-      "<strong>Duration:</strong> 4 years",
-      "<strong>Interval:</strong> Monthly thereafter",
-      "<strong>Curve:</strong> 25 / 25 / 25 / 25",
-    ],
-  },
-  {
-    label: "Building Block",
-    title: "Curve",
-    body:
-      "The weighting by year. Straight-line is predictable; front-loaded helps candidates; back-loaded maximizes stickiness.",
-    color: "curve",
+      "RSUs are company shares that settle into your account as they vest. No strike prices, and the value is clear on each vest date.",
+    grid: { active: 18, color: "rsu" },
     legend: [
-      { label: "Straight-line", class: "curve" },
-      { label: "Front / back-loaded variants", class: "duration" },
+      { label: "RSUs", class: "rsu" },
+      { label: "Options", class: "options" },
+      { label: "Performance", class: "performance" },
     ],
     card: [
-      "<strong>Value:</strong> $200k notional",
-      "<strong>Instrument:</strong> RSUs",
-      "<strong>Cliff:</strong> 12 months",
-      "<strong>Duration:</strong> 4 years",
-      "<strong>Interval:</strong> Monthly",
-      "<strong>Curve:</strong> Example 5 / 15 / 40 / 40 (back-loaded)",
+      "<strong>Program:</strong> Time-based RSUs",
+      "<strong>Vesting:</strong> 1-year cliff, monthly thereafter",
+      "<strong>Refresh:</strong> Annual performance cycle",
+      "<strong>Tax:</strong> Ordinary income at vest",
+    ],
+  },
+  {
+    label: "Vesting",
+    title: "Front-loaded vs steady vesting",
+    body:
+      "Front-loaded vesting (e.g., 40/20/20/20) helps new joiners realize value early. Straight-line vesting provides steady predictability.",
+    grid: { active: 12, color: "rsu" },
+    legend: [
+      { label: "Front-loaded", class: "rsu" },
+      { label: "Straight-line", class: "options" },
+    ],
+    card: [
+      "<strong>Program:</strong> RSUs with front-loaded curve",
+      "<strong>Vesting:</strong> 40% first year, then 20/20/20",
+      "<strong>Refresh:</strong> Begins at first anniversary",
+      "<strong>Tax:</strong> Withholding applied at each vest",
+    ],
+  },
+  {
+    label: "Refresh",
+    title: "Refresh grants keep equity alive",
+    body:
+      "Annual refreshes based on performance maintain momentum. Spot grants for promotions or retention avoid equity cliffs.",
+    grid: { active: 10, color: "performance" },
+    legend: [
+      { label: "Base grant", class: "rsu" },
+      { label: "Refresh", class: "performance" },
+    ],
+    card: [
+      "<strong>Program:</strong> RSUs + annual refresh",
+      "<strong>Vesting:</strong> 25/25/25/25 on refreshes",
+      "<strong>Refresh:</strong> Calibrated to performance bands",
+      "<strong>Tax:</strong> Standard withholding at vest",
+    ],
+  },
+  {
+    label: "Tax & Liquidity",
+    title: "Plan for taxes and trading windows",
+    body:
+      "RSUs trigger income at vest, while options involve strike prices and exercise windows. Clear blackout calendars reduce surprises.",
+    grid: { active: 8, color: "options" },
+    legend: [
+      { label: "RSU vest", class: "rsu" },
+      { label: "Exercise window", class: "options" },
+    ],
+    card: [
+      "<strong>Program:</strong> RSUs plus legacy options",
+      "<strong>Vesting:</strong> Monthly after 1-year cliff",
+      "<strong>Refresh:</strong> Annual; spot grants allowed",
+      "<strong>Tax:</strong> Coordinate with blackout periods",
+    ],
+  },
+  {
+    label: "Communication",
+    title: "Narratives make equity tangible",
+    body:
+      "Pair numbers with stories. Show modeled outcomes at different stock prices and clarify what happens during promotions or market swings.",
+    grid: { active: 16, color: "rsu" },
+    legend: [
+      { label: "Modeled value", class: "rsu" },
+      { label: "Downside scenario", class: "options" },
+      { label: "Upside scenario", class: "performance" },
+    ],
+    card: [
+      "<strong>Program:</strong> Story-first equity brief",
+      "<strong>Vesting:</strong> Clear visualization by year",
+      "<strong>Refresh:</strong> Scenario modeling included",
+      "<strong>Tax:</strong> FAQs and guidance links",
     ],
   },
 ];
+
+function buildGrid() {
+  vizGrid.innerHTML = "";
+  for (let i = 0; i < 24; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("viz-cell");
+    vizGrid.appendChild(cell);
+  }
+}
 
 function updateScene(index) {
   const scene = scenes[index];
@@ -124,6 +112,14 @@ function updateScene(index) {
   vizLabel.textContent = scene.label;
   vizTitle.textContent = scene.title;
   vizBody.textContent = scene.body;
+
+  const cells = vizGrid.querySelectorAll(".viz-cell");
+  cells.forEach((cell, i) => {
+    cell.className = "viz-cell";
+    if (i < scene.grid.active) {
+      cell.classList.add("viz-cell--active", scene.grid.color);
+    }
+  });
 
   vizLegend.innerHTML = "";
   scene.legend.forEach((item) => {
@@ -135,15 +131,16 @@ function updateScene(index) {
     vizLegend.appendChild(span);
   });
 
-  gearSummary.innerHTML = scene.card.map((entry) => `<li>${entry}</li>`).join("");
+  heroCardList.innerHTML = "";
+  scene.card.forEach((entry) => {
+    const li = document.createElement("li");
+    li.innerHTML = entry;
+    heroCardList.appendChild(li);
+  });
 
   steps.forEach((step) => step.classList.remove("is-active"));
   const current = steps[index];
   if (current) current.classList.add("is-active");
-
-  const colorSet = gearColors[scene.color] || gearColors.value;
-  vizGear.style.setProperty("--gear-color", colorSet.primary);
-  vizGear.style.setProperty("--gear-secondary", colorSet.secondary);
 }
 
 function setupObserver() {
@@ -166,6 +163,7 @@ function setupObserver() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  buildGrid();
   updateScene(0);
   setupObserver();
 });
